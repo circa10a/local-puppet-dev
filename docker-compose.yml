@@ -9,3 +9,4 @@ services:
       - 8140:8140
     volumes:
       - ./manifests:/etc/puppetlabs/code/environments/production/manifests
+      - ./Puppetfile:/etc/puppetlabs/code/environments/production/Puppetfile
