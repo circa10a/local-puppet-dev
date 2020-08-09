@@ -1,6 +1,6 @@
 # local-puppet-dev
 
-Docker setup for testing puppet manifests
+Simple docker setup for testing puppet manifests
 
 ## Usage
 
