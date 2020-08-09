@@ -1,16 +1,19 @@
-# Sample class
-class create_file(
-  $file_name = undef
+# Sample resource definition
+define file_loop(
+  $ensure
 ){
-  if $file_name {
-    ensure_resources('file', { $file_name => { 'ensure' => 'present' }})
-  } else {
-    notify{ 'file_name_undefined':
-      message => 'No file name provided'
-    }
+  ensure_resources('file', { $name => { 'ensure' => $ensure }})
+  exec { $name:
+    path    => ['/usr/bin', '/bin', '/sbin/', '/usr/local/bin'],
+    command => "rm -f ${name}",
   }
 }
 
-class { 'create_file':
-  file_name => "/tmp/${facts[fqdn]}"
+$files = [
+  "/tmp/${facts[fqdn]}",
+  "/tmp/${facts[osfamily]}"
+].downcase()
+
+file_loop { $files:
+  ensure => 'present'
 }
