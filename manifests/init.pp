@@ -11,7 +11,7 @@ define file_loop(
   ensure_resources('file', {
     $name => {
       ensure => $ensure,
-      mode   => shuffle($modes)[0]
+      mode   => random($modes)
     }
   })
 }
