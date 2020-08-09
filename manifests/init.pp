@@ -1,12 +1,19 @@
 # Sample resource definition
 define file_loop(
-  $ensure
+  $ensure,
+  $modes = [
+    '0400',
+    '0600',
+    '0700',
+    '0750'
+  ]
 ){
-  ensure_resources('file', { $name => { 'ensure' => $ensure }})
-  exec { $name:
-    path    => ['/usr/bin', '/bin', '/sbin/', '/usr/local/bin'],
-    command => "rm -f ${name}",
-  }
+  ensure_resources('file', {
+    $name => {
+      ensure => $ensure,
+      mode   => shuffle($modes)[0]
+    }
+  })
 }
 
 $files = [
