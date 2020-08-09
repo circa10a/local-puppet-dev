@@ -10,4 +10,5 @@ services:
     volumes:
       - ./manifests:/etc/puppetlabs/code/environments/production/manifests
       - ./functions:/etc/puppetlabs/code/environments/production/lib/puppet/functions
+      - ./facter:/etc/puppetlabs/code/environments/production/modules/facts/lib/facter
       - ./Puppetfile:/etc/puppetlabs/code/environments/production/Puppetfile

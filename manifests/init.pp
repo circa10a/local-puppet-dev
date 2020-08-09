@@ -24,3 +24,8 @@ $files = [
 file_loop { $files:
   ensure => 'present'
 }
+
+if $facts[is_in_container] or $facts[virtual] == 'docker' {
+  notify{'Running in container':}
+}
+
