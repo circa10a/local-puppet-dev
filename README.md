@@ -1,4 +1,4 @@
-# local-puppet-dev
+# local-puppet-dev <img src="https://i.imgur.com/grQyxwI.png" height="5%" width="5%" align="left"/>
 
 Simple docker setup for testing puppet manifests
 
