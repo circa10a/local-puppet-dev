@@ -40,17 +40,6 @@ See [module structure docs](https://puppet.com/docs/puppet/latest/modules_fundam
 - Changes made are reflected instantly.
 
 ```text
-manifests
-└── site.pp
-```
-
-### Manifests
-
-The entrypoint(`site.pp`) `contains` our custom modules, therefore executing them.
-
-- The `manifests` directory is mapped into `/etc/puppetlabs/code/environments/production/manifests` in the puppet container.
-
-```text
 modules
 └── my_module
     ├── data
@@ -66,6 +55,17 @@ modules
     │   └── init.pp
     └── templates
         └── sample_template.json.epp
+```
+
+### Manifests
+
+The entrypoint(`site.pp`) `contains` our custom modules, therefore executing them.
+
+- The `manifests` directory is mapped into `/etc/puppetlabs/code/environments/production/manifests` in the puppet container.
+
+```text
+manifests
+└── site.pp
 ```
 
 ### Puppetfile
