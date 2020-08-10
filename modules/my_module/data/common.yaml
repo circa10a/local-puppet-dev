@@ -1,0 +1,3 @@
+my_module::files_to_create:
+  - "/tmp/%{facts.fqdn}"
+  - "/tmp/%{facts.osfamily}"
