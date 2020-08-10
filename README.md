@@ -66,7 +66,3 @@ The entrypoint(`site.pp`) `contains` our custom modules, therefore executing the
 manifests
 └── site.pp
 ```
-
-### Puppetfile
-
-Puppet module dependencies should be added to the `Puppetfile`. Modules will be installed when you launch the `./run_puppet_agent.sh` daemon.
