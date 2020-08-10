@@ -8,7 +8,7 @@ class my_module(
   my_module::file_loop { $files:
     ensure => 'present'
   }
-  # Utilize custom fact to determine if in docker or lcx
+  # Utilize custom fact to determine if in docker or lxc
   if $facts[is_in_container] or $facts[virtual] == 'docker' {
     notify{'Running in container':}
   }
