@@ -9,7 +9,6 @@ Simple docker setup for testing puppet manifests
     + [Puppetfile](#puppetfile)
     + [Modules](#modules)
     + [Manifests](#manifests)
-    + [Puppetfile](#puppetfile-1)
 
 ## Usage
 
