@@ -1,13 +1,14 @@
-version: '3'
-
 services:
   puppet:
     container_name: puppet
     hostname: puppet
-    image: puppet/puppetserver
+    image: voxpupuli/container-puppetserver
+    environment:
+      PUPPETSERVER_ENVIRONMENT_TIMEOUT: 0
     ports:
       - 8140:8140
     volumes:
       - ./modules:/etc/puppetlabs/code/modules
       - ./manifests:/etc/puppetlabs/code/environments/production/manifests
       - ./Puppetfile:/etc/puppetlabs/code/environments/production/Puppetfile
+      - ./ca-ssl:/etc/puppetlabs/puppetserver/ca

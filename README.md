@@ -15,7 +15,7 @@ Simple docker setup for testing puppet modules
 ### Start standalone puppet server
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 ### Execute puppet agent
