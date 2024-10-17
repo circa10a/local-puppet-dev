@@ -9,9 +9,9 @@ define my_module::file_loop (
   ]
 ) {
   ensure_resources('file', {
-      $name => {
-        ensure => $ensure,
-        mode   => random($modes),
-      }
+    $name => {
+      ensure => $ensure,
+      mode   => random($modes),
+    }
   })
 }

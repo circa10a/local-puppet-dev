@@ -10,7 +10,7 @@ PUPPETFILE=/etc/puppetlabs/code/environments/production/Puppetfile
 if [[ $(docker ps --filter "name=^/$CONTAINER_NAME$" --format '{{.Names}}') == $CONTAINER_NAME ]]; then
   # Update package sources
   # Install deps
-  docker exec -it $CONTAINER_NAME bash -c "apt update; r10k puppetfile install --verbose --puppetfile=$PUPPETFILE --moduledir=$MODULE_DIR"
+  docker exec -it $CONTAINER_NAME bash -c "r10k puppetfile install --verbose --puppetfile=$PUPPETFILE --moduledir=$MODULE_DIR"
   while true;
     do
       docker exec -it $CONTAINER_NAME puppet agent -t

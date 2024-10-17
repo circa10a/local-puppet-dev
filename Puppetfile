@@ -1,1 +1,1 @@
-mod 'puppetlabs-stdlib', '6.3.0'
+mod 'puppetlabs-stdlib', '9.6.0'
