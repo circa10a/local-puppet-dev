@@ -12,3 +12,4 @@ services:
       - ./manifests:/etc/puppetlabs/code/environments/production/manifests
       - ./Puppetfile:/etc/puppetlabs/code/environments/production/Puppetfile
       - ./ca-ssl:/etc/puppetlabs/puppetserver/ca
+      - ./auth.conf:/etc/puppetlabs/puppetserver/conf.d/auth.conf
