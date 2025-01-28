@@ -1,8 +1,8 @@
 services:
-  puppet:
-    container_name: puppet
+  puppetserver:
+    container_name: puppetserver
     hostname: puppet
-    image: voxpupuli/container-puppetserver
+    image: voxpupuli/puppetserver
     environment:
       PUPPETSERVER_ENVIRONMENT_TIMEOUT: 0
     ports:
